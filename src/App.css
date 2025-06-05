@@ -1,0 +1,199 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body with weather-themed background and gradient overlay */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+      rgba(10, 25, 47, 0.75),
+      rgba(10, 25, 47, 0.75)
+    ),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  color: #e0e7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: background-color 0.5s ease;
+}
+
+/* Main container */
+.app {
+  background: rgba(20, 40, 75, 0.85);
+  border-radius: 24px;
+  padding: 2.5rem 3rem;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  color: #cbd5e1;
+}
+
+/* Heading */
+.app h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  color: #fef08a;
+  text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.6);
+}
+
+/* Input group container */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.input-group input {
+  padding: 8px 9px;
+  font-size: 0-9rem;
+  border: none;
+  border-radius: 14px;
+  outline: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 700;
+}
+
+.input-group input::placeholder {
+  color: #aabbcc;
+  font-weight: 500;
+}
+
+.input-group input:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 6px 2px #fef08a;
+  color: #fef08a;
+}
+
+/* Buttons */
+.input-group button,
+.geolocation-button {
+  padding: 14px 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #fef08a, #f59e0b);
+  color: #1e293b;
+  box-shadow: 0 4px 8px rgba(254, 224, 102, 0.7);
+  transition: background 0.4s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.input-group button:hover,
+.geolocation-button:hover {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(180, 83, 9, 0.9);
+}
+
+.input-group button:active,
+.geolocation-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(180, 83, 9, 0.6);
+}
+
+/* Toggle button for units */
+.toggle {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.7);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.toggle:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  box-shadow: 0 6px 10px rgba(30, 64, 175, 0.85);
+}
+
+/* Error message styling */
+.error {
+  color: #f87171;
+  font-weight: 700;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  text-shadow: 0 0 5px rgba(248, 113, 113, 0.8);
+}
+
+/* Weather information */
+.weather {
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.weather h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  color: #fef08a;
+  text-shadow: 1px 1px 2px rgba(254, 240, 138, 0.7);
+}
+
+.weather img {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 5px #fde68a);
+}
+
+.weather .desc {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin-bottom: 0.8rem;
+  color: #fcd34d;
+}
+
+.weather p {
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+
+/* Date/time */
+.weather .date {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Responsive styles */
+@media (min-width: 600px) {
+  .input-group {
+    flex-direction: row;
+  }
+
+  .input-group input {
+    flex: 1;
+  }
+
+  .input-group button,
+  .geolocation-button {
+    width: auto;
+    padding: 14px 22px;
+  }
+}
