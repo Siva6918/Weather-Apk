@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
+import HowItWorks from "./HowItWorks.jsx";
+import Footer from "./Footer.jsx";
+import Header from "./Header.jsx";
 
 const API_KEY = "3419d7dc66a85f4c5e006f0bb2ae6da6";
 
@@ -94,64 +97,81 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <h1>🌦️ Weather App</h1>
-      <form
-        className="input-group"
-        onSubmit={(e) => {
-          e.preventDefault();
-          fetchWeather();
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Enter city name"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          onKeyPress={handleKeyPress}
-          aria-label="City name"
-        />
-        <button type="submit" aria-label="Search weather">
-          Submit
-        </button>
-        <button
-          type="button"
-          onClick={getCurrentLocationWeather}
-          className="geolocation-button"
-          aria-label="Get weather from current location"
-        >
-          📍
-        </button>
-      </form>
-
-      <button className="toggle" onClick={toggleUnit}>
-        Switch to {unit === "metric" ? "Fahrenheit" : "Celsius"}
-      </button>
-
-      {error && <p className="error">⚠️ {error}</p>}
-
-      {weather && (
-        <div className="weather" role="region" aria-live="polite">
-          <h2>
-            {weather.name}, {weather.country}
-          </h2>
-          <img src={weather.icon} alt={weather.description} />
-          <p className="desc">☁ {weather.description}</p>
-          <p>
-            <strong>Temperature:</strong> {weather.temp} {unitLabel}
-          </p>
-          <p>
-            <strong>Feels Like:</strong> {weather.feels_like} {unitLabel}
-          </p>
-          <p>
-            <strong>Humidity:</strong> 💧 {weather.humidity}%
-          </p>
-          <p>
-            <strong>Wind Speed:</strong> 💨 {weather.wind} {unit === "metric" ? "m/s" : "mph"}
-          </p>
-          <p className="date">🕒 {new Date().toLocaleString()}</p>
+    <div>
+      <div>
+        <Header />
+      </div>
+      <div className="Main">
+        <div className="app">
+          <h1>Search by City</h1>
+          <form
+            className="input-group"
+            onSubmit={(e) => {
+              e.preventDefault();
+              fetchWeather();
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Enter city name"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              onKeyPress={handleKeyPress}
+              aria-label="City name"
+            />
+            <button type="submit" aria-label="Search weather">
+              Submit
+            </button>
+            <button
+              type="button"
+              onClick={getCurrentLocationWeather}
+              className="geolocation-button"
+              aria-label="Get weather from current location"
+            >
+              📍
+            </button>
+          </form>
+          <HowItWorks />
         </div>
-      )}
+        <div className="app">
+          <h1>Weather Details</h1>
+          <p className="instructions">View the current weather conditions _</p>
+
+          {error && <p className="error">⚠️ {error}</p>}
+
+          {weather && (
+            <div className="weather" role="region" aria-live="polite">
+              <h2>
+                {weather.name}, {weather.country}
+              </h2>
+              <img src={weather.icon} alt={weather.description} />
+              <p className="desc">☁ {weather.description}</p>
+              <p>
+                <strong>Temperature:</strong> {weather.temp} {unitLabel}
+              </p>
+              <p>
+                <strong>Feels Like:</strong> {weather.feels_like} {unitLabel}
+              </p>
+              <p>
+                <strong>Humidity:</strong> 💧 {weather.humidity}%
+              </p>
+              <p>
+                <strong>Wind Speed:</strong> 💨 {weather.wind}{" "}
+                {unit === "metric" ? "m/s" : "mph"}
+              </p>
+              <p className="date">🕒 {new Date().toLocaleString()}</p>
+              
+            </div>
+          )}
+          <button className="toggle" onClick={toggleUnit}>
+                Switch to {unit === "metric" ? "Fahrenheit" : "Celsius"}
+              </button>
+        </div>
+      </div>
+
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };
