@@ -17,9 +17,8 @@ body {
   align-items: center;
   transition: background-color 0.5s ease;
   margin: 0px;
-   padding: 0;
+  padding: 0;
   box-sizing: border-box;
-
 }
 
 /* Main container */
@@ -75,7 +74,7 @@ body {
 /* Inputs */
 .input-group input {
   padding: 10px 15px;
-  font-size: 0-9rem;
+  font-size: 0.9rem;
   border: none;
   border-radius: 14px;
   outline: none;
@@ -161,15 +160,12 @@ body {
 
 /* Weather information */
 .weather {
-
-  
   max-width: 470px;
   margin-top: 2rem;
   text-align: center;
   font-weight: 600;
   color: #f1f5f9;
 }
-
 
 .weather h2 {
   font-size: 2rem;
@@ -206,26 +202,24 @@ body {
 }
 
 /* Responsive styles */
-@media (min-width:850px) {
- .input-group{
-   flex-direction: row;
- } 
-  
+@media (min-width: 850px) {
+  .input-group {
+    flex-direction: row;
+  }
 }
 @media (min-width: 700px) {
-  
-  .Main{
+  .Main {
     flex-direction: row;
   }
 
   .input-group input {
     flex: 1;
   }
-  .app{
+  .app {
     max-width: 480px;
   }
 
-.input-group button,
+  .input-group button,
   .geolocation-button {
     width: auto;
     padding: 10px 6px;
