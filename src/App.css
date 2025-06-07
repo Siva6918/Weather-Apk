@@ -22,6 +22,7 @@ body {
 /* Main container */
 .Main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -40,7 +41,7 @@ body {
   border-radius: 24px;
   padding: 2.5rem 3rem;
   width: 100%;
-  max-width: 470px;
+  max-width: 400px;
   min-height: 4rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   text-align: center;
@@ -70,7 +71,7 @@ body {
 
 /* Inputs */
 .input-group input {
-  padding: 8px 9px;
+  padding: 10px 15px;
   font-size: 0-9rem;
   border: none;
   border-radius: 14px;
@@ -97,7 +98,7 @@ body {
 /* Buttons */
 .input-group button,
 .geolocation-button {
-  padding: 14px 0;
+  padding: 12px 0;
   font-size: 1.15rem;
   font-weight: 700;
   border: none;
@@ -105,7 +106,7 @@ body {
   cursor: pointer;
   background: linear-gradient(135deg, #fef08a, #f59e0b);
   color: #1e293b;
-  box-shadow: 0 4px 6px rgba(254, 224, 102, 0.7);
+  box-shadow: 0 2px 4px rgba(254, 224, 102, 0.7);
   transition: background 0.4s ease, transform 0.15s ease;
   user-select: none;
 }
@@ -114,13 +115,13 @@ body {
 .geolocation-button:hover {
   background: linear-gradient(135deg, #f59e0b, #b45309);
   transform: translateY(-3px);
-  box-shadow: 0 4px 6px rgba(180, 83, 9, 0.9);
+  box-shadow: 0 2px 4px rgba(180, 83, 9, 0.9);
 }
 
 .input-group button:active,
 .geolocation-button:active {
   transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(180, 83, 9, 0.6);
+  box-shadow: 0 2px 4px rgba(180, 83, 9, 0.6);
 }
 
 /* Toggle button for units */
@@ -202,18 +203,28 @@ body {
 }
 
 /* Responsive styles */
-@media (min-width: 600px) {
-  .input-group {
+@media (min-width:850px) {
+ .input-group{
+   flex-direction: row;
+ } 
+  
+}
+@media (min-width: 700px) {
+  
+  .Main{
     flex-direction: row;
   }
 
   .input-group input {
     flex: 1;
   }
+  .app{
+    max-width: 480px;
+  }
 
-  .input-group button,
+.input-group button,
   .geolocation-button {
     width: auto;
-    padding: 14px 22px;
+    padding: 10px 6px;
   }
 }
