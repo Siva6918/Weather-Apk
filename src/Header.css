@@ -1,4 +1,5 @@
 .weather-header {
+  width: 100vw;
   background: #101820;
   color: #f7c948;
   padding: 2rem 1rem;

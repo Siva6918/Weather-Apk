@@ -97,7 +97,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="Container">
       <div>
         <Header />
       </div>
