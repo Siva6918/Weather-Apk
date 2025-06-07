@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Weather-Apk/static/css/main.86ccb16c.css",
+    "main.css": "/Weather-Apk/static/css/main.0fa5ac76.css",
     "main.js": "/Weather-Apk/static/js/main.5a4f477e.js",
     "static/js/453.f85e551b.chunk.js": "/Weather-Apk/static/js/453.f85e551b.chunk.js",
     "static/media/weather-bg.jpg": "/Weather-Apk/static/media/weather-bg.92da96764fac6f97548d.jpg",
     "index.html": "/Weather-Apk/index.html",
-    "main.86ccb16c.css.map": "/Weather-Apk/static/css/main.86ccb16c.css.map",
+    "main.0fa5ac76.css.map": "/Weather-Apk/static/css/main.0fa5ac76.css.map",
     "main.5a4f477e.js.map": "/Weather-Apk/static/js/main.5a4f477e.js.map",
     "453.f85e551b.chunk.js.map": "/Weather-Apk/static/js/453.f85e551b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.86ccb16c.css",
+    "static/css/main.0fa5ac76.css",
     "static/js/main.5a4f477e.js"
   ]
 }
